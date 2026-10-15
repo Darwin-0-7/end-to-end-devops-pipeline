@@ -34,7 +34,7 @@ resource "aws_security_group" "devops_sg" {
   from_port   = 22
   to_port     = 22
   protocol    = "tcp"
-  cidr_blocks = ["49.37.202.83/32", "${aws_instance.jenkins_server.public_ip}/32"] 
+  cidr_blocks = ["49.37.202.83/32"] 
 }
 
   ingress {
