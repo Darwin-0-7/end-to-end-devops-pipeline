@@ -17,9 +17,9 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker ubuntu
 
-# 1. Install Java (Jenkins requires Java 17)
+# 1. Install Java (Jenkins requires Java 21)
 sudo apt-get update
-sudo apt-get install -y fontconfig openjdk-17-jre
+sudo apt-get install -y fontconfig openjdk-21-jre
 
 # 2. Add Jenkins Key and Repository
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
