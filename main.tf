@@ -31,12 +31,11 @@ resource "aws_security_group" "devops_sg" {
   description = "Allow SSH, HTTP, Flask, and Jenkins traffic"
 
   ingress {
-    description = "SSH Access"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["172.20.10.4/32"] 
-  }
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
+  cidr_blocks = ["49.37.202.83/32", "${aws_instance.jenkins_server.public_ip}/32"] 
+}
 
   ingress {
     description = "Flask Weather App"
@@ -51,7 +50,7 @@ resource "aws_security_group" "devops_sg" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["172.20.10.4/32"]
+    cidr_blocks = ["49.37.202.83/32"]
   }
 
   egress {
