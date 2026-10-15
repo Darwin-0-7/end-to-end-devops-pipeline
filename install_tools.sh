@@ -28,6 +28,7 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkin
 # 3. Update apt again and install Jenkins
 sudo apt-get update
 sudo apt-get install -y jenkins
+sudo usermod -aG docker jenkins
 
 # 4. Start and Enable Jenkins
 sudo systemctl enable jenkins
